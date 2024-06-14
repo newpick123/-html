@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제 페이지</title>
+</head>
+<body>
+    <script src="https://js.tosspayments.com/v1"></script>
+    <script>
+        const tossPayments = TossPayments("test_gck_0RnYX2w532xNQeqDa4XxrNeyqApQ");
+
+        tossPayments.requestPayment('카드', {
+            amount: 5000,
+            orderId: '주문번호',
+            orderName: '상품명',
+            customerName: '고객명',
+            successUrl: 'https://your-app.com/success',
+            failUrl: 'https://your-app.com/fail',
+        });
+    </script>
+</body>
+</html>
